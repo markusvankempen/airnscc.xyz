@@ -51,10 +51,10 @@ docker login -u youerusename docker.io
 docker images 
 
 # add a tag
-docker tag air-nscc-website:v1
+docker tag 79c9fadbe351 youerusename/air-nscc-website:v1
 
 # push docker images to dockerio
-docker push air-nscc-website:v1
+docker push youerusename/air-nscc-website:v1
 
 ```
 VERSION 20200719
