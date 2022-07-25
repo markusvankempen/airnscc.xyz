@@ -57,5 +57,5 @@ docker tag 79c9fadbe351 youerusename/air-nscc-website:v1
 docker push youerusename/air-nscc-website:v1
 
 ```
-VERSION 20200719
+VERSION 20200725
 Markus
