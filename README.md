@@ -26,14 +26,36 @@ Add one or both of the two default machines (podman-machine-default and podman-a
   
 
 ```bash
+
+# podman setup
+brew install podman
+podman machine init  
+podman system connection default podman-machine-default-root  ???
+podman machine set --rootful
+podman machine start
+ln -s podman docker
+
 # Build Image
-docker build -t my-test-nginx .
+docker build -t air-nscc-website .
 
 # Run container
-docker run -d -p 80:80 my-test-nginx 
+docker run -d -p 80:80 air-nscc-website
 
 # Confirm container is running
 docker container ls
+
+# login to docker.io
+docker login -u youerusename docker.io
+
+# list docker images
+docker images 
+
+# add a tag
+docker tag 79c9fadbe351 youerusename/air-nscc-website:v1
+
+# push docker images to dockerio
+docker push youerusename/air-nscc-website:v1
+
 ```
-VERSION 20200719
+VERSION 20200725
 Markus
