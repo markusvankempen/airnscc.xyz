@@ -35,6 +35,10 @@ podman machine set --rootful
 podman machine start
 ln -s podman docker
 
+# Remove images 
+docker rmi -f $(docker images -aq)
+
+
 # Build Image
 docker build -t air-nscc-website .
 
@@ -59,3 +63,7 @@ docker push youerusename/air-nscc-website:v1
 ```
 VERSION 20200725
 Markus
+
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer  --restart=always  -v /var/run/docker.sock:/var/run/docker.sock  -v portainer_new:/data portainer/portainer-ce:latest
+
+
